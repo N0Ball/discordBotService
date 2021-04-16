@@ -1,0 +1,10 @@
+{
+    "service_controller" : {
+        "name" : "ServiceController",
+        "prefix" : "!"
+    },
+    "test" : {
+        "name" : "Test",
+        "prefix" : "$test "
+    }
+}
