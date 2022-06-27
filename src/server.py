@@ -6,6 +6,7 @@ from importlib import reload
 from service.src.db import Db
 from service.src.logger import Log
 from multiprocessing import Process
+from dotenv import load_dotenv
 from service.service_controller import ServiceController
 
 class Server():
@@ -22,6 +23,11 @@ class Server():
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # Socket listening ip and port
         self.socket.bind(('127.0.0.1', 5230))
+        # Load env 
+        load_dotenv()
+        # Get port
+        self.PORT = os.getenv('PORT')
+
 
     # Load and start service
     def load_service(self, service):
@@ -187,8 +193,8 @@ if __name__ == "__main__":
     # Connect port
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         # Check if port is used
-        if s.connect_ex(('localhost', 5230)) == 0:
-            print(f'Port {5230} is already used')
+        if s.connect_ex(('localhost', self.PORT)) == 0:
+            print(f'Port {self.PORT} is already used')
             exit()
 
     # Get server
