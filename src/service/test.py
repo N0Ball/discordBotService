@@ -14,4 +14,4 @@ class Test(Service):
 
         @self.client.command()
         async def say(ctx, msg=""):
-            await ctx.send(f"{str(ctx.author)}, I say's hi to you!")
+            await ctx.send(f"{str(ctx.author)}, I say's hi to you! and it is restarted")

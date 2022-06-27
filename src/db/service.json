@@ -6,5 +6,9 @@
     "test" : {
         "name" : "Test",
         "prefix" : "$test "
+    },
+    "order" : {
+        "name" : "Order",
+        "prefix" : "/order "
     }
 }
