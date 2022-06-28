@@ -1,6 +1,7 @@
 import sys
 import json
 import socket
+import os
 
 from importlib import reload
 from service.src.db import Db
@@ -193,8 +194,8 @@ if __name__ == "__main__":
     # Connect port
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         # Check if port is used
-        if s.connect_ex(('localhost', self.PORT)) == 0:
-            print(f'Port {self.PORT} is already used')
+        if s.connect_ex(('localhost', 5230)) == 0:
+            print(f'Port {5230} is already used')
             exit()
 
     # Get server
